@@ -72,6 +72,3 @@ class DeleteTask(LoginRequiredMixin, DeleteView):
     fields = ["title", "description", "completed"]
     success_url = reverse_lazy("task_list")
 
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(DeleteTask, self).form_valid(form)

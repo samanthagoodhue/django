@@ -8,4 +8,4 @@ This is a simple to-do app built using Django, a Python web framework. The app a
 - Create a new task with a title and optional description.
 - Update an existing task's title and description.
 - Delete a task from the list.
-- Register as a new user
+- Register as a new user.

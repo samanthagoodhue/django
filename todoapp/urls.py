@@ -1,5 +1,8 @@
-from django.urls import include, path
-from tasks import views
+# config/urls.py
 from django.contrib import admin
+from django.urls import include, path
 
-urlpatterns = [path("admin/", admin.site.urls), path("", include("tasks.urls"))]
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('apis/v1/', include('apis.urls'))]

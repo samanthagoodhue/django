@@ -1,13 +1,15 @@
 # Create your views here.
-from django.shortcuts import render, redirect
-from .models import Task
-from .forms import TaskForm
-from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
-from django.contrib.auth.views import LoginView
-from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView
+from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
+from django.views.generic.edit import (CreateView, DeleteView, FormView,
+                                       UpdateView)
+from django.views.generic.list import ListView
+
+from .forms import TaskForm
+from .models import Task
 
 
 class Login(LoginView):

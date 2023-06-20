@@ -1,9 +1,10 @@
-# apis/urls.py
 from django.urls import path
-from rest_framework.routers import DefaultRouter
+from rest_framework.urlpatterns import format_suffix_patterns
+from apis import views
 
-from .views import TaskViewSet
+urlpatterns = [
+    path('tasks/', views.Tasks.as_view()),
+    path('tasks/<int:pk>/', views.TaskDetail.as_view()),
+]
 
-router = DefaultRouter()
-router.register("", TaskViewSet, basename="tasks")
-urlpatterns = router.urls
+urlpatterns = format_suffix_patterns(urlpatterns)
